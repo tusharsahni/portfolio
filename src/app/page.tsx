@@ -16,7 +16,6 @@ export default function Home() {
      
       <HorizontalScroll />
             <Skills />
-      { <Features /> }
       <FAQ />
       <Contact />
       <Footer />
