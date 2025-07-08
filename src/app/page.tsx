@@ -5,7 +5,7 @@ import HorizontalScroll from "@/components/HorizontalScroll";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Features from "@/components/Features";
+
 
 
 export default function Home() {
