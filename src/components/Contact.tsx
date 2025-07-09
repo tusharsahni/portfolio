@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import GlowButton from "./ui/GlowButton";
-
+import SmokeVideoBackground from "./SmokeVideoBackground";
 export default function Contact() {
   const [formState, setFormState] = useState({
     name: "",
@@ -160,7 +160,8 @@ export default function Contact() {
   }, [gradientControls1, borderControls]);
 
   return (
-    <section className="relative py-24 md:py-36 px-6 md:px-12 border-t border-white/10 bg-black overflow-hidden" id="contact">
+    <section className="relative py-24 md:py-36 px-6 md:px-12 border-t border-white/10 bg-transparent overflow-hidden" id="contact">
+      
       {/* Circular gradient - positioned at bottom with only upper half visible */}
       <motion.div
         className="absolute bottom-[-300px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-r from-gray-400/15 via-amber-200/10 to-gray-300/15 blur-3xl opacity-30 pointer-events-none"

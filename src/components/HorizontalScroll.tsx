@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import VideoPlayer from "./VideoPlayer";
 import Link from "next/link";
 import React from "react";
+import SmokeVideoBackground from "./SmokeVideoBackground";
 
 interface Project {
   id: number;
@@ -43,7 +44,31 @@ const projects: Project[] = [
     videoThumbnail: "/swipesense.png", // Local image
     videoUrl: "/swipsesense-final.mp4", // Local video file
     year: 2024,
-    featured: true,
+    featured: false,
+  },
+  {
+    id: 3,
+    title: "DarkDetect - Detecting Dark Patterns",
+    category: "AI & ML",
+    client: "",
+    description: "A tool that detects dark patterns in websites and applications. It uses AI to analyze user interfaces and identify manipulative design practices that can lead to user exploitation.",
+    image: "/image.jpg", // Local image
+    videoThumbnail: "/swipesense.png", // Local image
+    videoUrl: "/swipsesense-final.mp4", // Local video file
+    year: 2024,
+    featured: false,
+  },
+  {
+    id: 4,
+    title: "rapidWhl - Python Package Creation Made Easy using AI",
+    category: "AI & ML",
+    client: "",
+    description: "A tool that simplifies the process of creating Python packages using AI. It automates the generation of package structure, documentation, and setup files, making it easier for developers to create and distribute their Python libraries.",
+    image: "/image.jpg", // Local image
+    videoThumbnail: "/swipesense.png", // Local image
+    videoUrl: "/swipsesense-final.mp4", // Local video file
+    year: 2025,
+    featured: false,
   }
 ];
 
@@ -368,11 +393,13 @@ export default function HorizontalScroll() {
   };
 
   return (
+
     <section
       ref={containerRef}
       className="py-16 md:py-24 relative border-t border-b border-white/10"
       id="work"
     >
+        
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Silver circular gradient at bottom - only 25% visible */}
@@ -529,7 +556,7 @@ export default function HorizontalScroll() {
                           />
 
                           {/* Play button overlay */}
-                          <div className="absolute inset-0 flex items-center justify-center">
+                          {/* <div className="absolute inset-0 flex items-center justify-center">
                             <button
                               className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 cursor-pointer"
                               onClick={(e) => {
@@ -542,19 +569,20 @@ export default function HorizontalScroll() {
                                 e.stopPropagation();
                                 setIsVideoOpen(true);
                               }}
-                            >
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" className="ml-1">
+                            > */}
+                              {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" className="ml-1">
                                 <polygon points="5 3 19 12 5 21 5 3"></polygon>
                               </svg>
                             </button>
-                          </div>
+                          </div> */}
 
                           {/* Duration badge */}
-                          {filteredProjects[currentIndex].duration && (
+                          
+                          {/* {filteredProjects[currentIndex].duration && (
                             <div className="absolute bottom-4 right-4 px-2 py-1 bg-black/60 backdrop-blur-sm rounded text-xs text-white/90">
                               {filteredProjects[currentIndex].duration}
                             </div>
-                          )}
+                          )} */}
 
                           {/* Featured badge */}
                           {filteredProjects[currentIndex].featured && (
@@ -600,11 +628,11 @@ export default function HorizontalScroll() {
                             </p>
 
                             <div className="mt-6 flex justify-between items-center">
-                              <span className="text-xs text-white/60">Watch Video</span>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/60 group-hover:translate-x-1 transition-transform">
+                              {/* <span className="text-xs text-white/60">Watch Video</span> */}
+                              {/* <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/60 group-hover:translate-x-1 transition-transform">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
-                              </svg>
+                              </svg> */}
                             </div>
                           </div>
                         </div>
@@ -709,11 +737,11 @@ export default function HorizontalScroll() {
       )}
 
       {/* Video Player Modal */}
-      <VideoPlayer
+      {/* <VideoPlayer
         videoUrl={filteredProjects[currentIndex]?.videoUrl || ""}
         isOpen={isVideoOpen}
         onClose={() => setIsVideoOpen(false)}
-      />
+      /> */}
     </section>
   );
 }

@@ -161,7 +161,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="py-10 px-6 md:px-12 border-t border-white/10">
+    <footer className="py-10 px-6 md:px-12 border-t border-white/10 bg-transparent z-20 relative">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
@@ -175,7 +175,8 @@ export default function Footer() {
               onClick={() => setShowFeedback(true)}
               className="text-sm text-muted hover:text-white transition-colors"
             >
-              Feedback
+              <span role="img" aria-label="feedback">💬</span>
+  Leave your Feedback!
             </button>
           </div>
 

@@ -113,8 +113,10 @@ import Link from "next/link";
 export default function About() {
   return (
     <section className="py-10 md:py-16 px-6 md:px-12 relative border-t border-white/10 overflow-hidden" id="about">
+      
       {/* Background effects */}
-      <div className="absolute inset-0 bg-black/90" />
+
+      {/* <div className="absolute inset-0 bg-black/90" />
       <div className="absolute inset-0">
         <div
           className="absolute left-0 right-0 bottom-0 h-[70%] opacity-30"
@@ -136,7 +138,7 @@ export default function About() {
             `
           }}
         />
-      </div>
+      </div> */}
 
       {/* Main content */}
       <div className="max-w-7xl mx-auto relative z-10">

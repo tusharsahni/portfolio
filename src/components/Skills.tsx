@@ -194,7 +194,7 @@
 
 //       </div>
 //     </section>
-    
+
 //   );
 // }
 
@@ -209,6 +209,9 @@ import {
   SiPostman, SiGit, SiNumpy, SiPandas, SiScikitlearn, SiAwsamplify,
   SiGooglecloud, SiPostgresql, SiMongodb
 } from "react-icons/si";
+import SmokeVideoBackground from "@/components/SmokeVideoBackground";
+
+
 
 export default function Skills() {
   const [openCategory, setOpenCategory] = useState(Array(7).fill(true));
@@ -327,7 +330,9 @@ export default function Skills() {
   ];
 
   return (
-    <section className="py-16 md:py-24 relative border-t border-b border-white/10 bg-black" id="skills">
+
+    <section className="py-16 md:py-24 relative border-t border-b border-white/10 bg-transparent" id="skills">
+      
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="flex justify-center mb-12">
           <motion.div
@@ -418,7 +423,7 @@ export default function Skills() {
           viewport={{ once: true }}
           className="max-w-5xl mx-auto bg-[#121212] border border-white/10 rounded-xl p-10 shadow-lg relative overflow-hidden"
         >
-        
+
           {/* Header Row */}
           <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-6">
             <div className="flex items-center gap-4">
@@ -467,9 +472,8 @@ export default function Skills() {
               >
                 <span className="transition duration-300 group-hover:opacity-0">{tech.name}</span>
                 <span
-                  className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
-                    hoveredTech === tech.name ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${hoveredTech === tech.name ? "opacity-100" : "opacity-0"
+                    }`}
                 >
                   {tech.icon}
                 </span>

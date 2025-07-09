@@ -26,9 +26,9 @@ export default function Hero() {
   return (
     <section className="min-h-[80vh] flex flex-col justify-center items-center px-6 pt-20 pb-10 md:px-12 relative overflow-hidden">
       {/* Smoke Video Background */}
-      <div className="opacity-40">
+      {/* <div className="opacity-40">
         <SmokeVideoBackground />
-      </div>
+      </div> */}
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
 

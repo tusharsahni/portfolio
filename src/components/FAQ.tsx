@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
-
+import SmokeVideoBackground from "./SmokeVideoBackground";
 // FAQ data
 const faqItems = [
   {
@@ -41,8 +41,10 @@ export default function FAQ() {
   }, [gradientControls]);
 
   return (
-    <section className="relative py-20 md:py-28 px-6 md:px-12 bg-black overflow-hidden" id="faq">
+    <section className="relative py-20 md:py-28 px-6 md:px-12 bg-transparent overflow-hidden" id="faq">
+       
       {/* Circular gradient */}
+
       <motion.div
         className="absolute bottom-[-300px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-r from-gray-400/15 via-amber-200/10 to-gray-300/15 blur-3xl opacity-30 pointer-events-none"
         animate={gradientControls}
