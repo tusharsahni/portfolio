@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import SmokeVideoBackground from "@/components/SmokeVideoBackground";
+import { Analytics } from '@vercel/analytics/next';
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({
          <SmokeVideoBackground />
         <CustomCursor />
         {children}
+        <Analytics />
       </body>
     </html>
   );
