@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SmokeVideoBackground from "./SmokeVideoBackground";
 import GlowButton from "./ui/GlowButton";
+import Typewriter from 'typewriter-effect';
 export default function Hero() {
 
 
@@ -30,16 +31,28 @@ export default function Hero() {
       </div>
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
-        {/* Available for work badge */}
-        <motion.div
-          className="inline-flex items-center mb-5"
+
+         <motion.div
+          className="inline-flex items-center mb-5 text-sm text-white/80 px-4 py-1 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm font-mono"
           initial="hidden"
           animate="visible"
           variants={fadeInUpVariants}
           custom={0}
         >
-          <span className="w-2.5 h-2.5 bg-green-500 rounded-full mr-2"></span>
-          <span className="text-sm">available for work</span>
+          <Typewriter
+            options={{
+              strings: [
+                "Full Stack Developer",
+                "AI Tinkerer",
+                "Problem Solver",
+                "Open to exciting challenges"
+              ],
+              autoStart: true,
+              loop: true,
+              delay: 40,
+              deleteSpeed: 30
+            }}
+          />
         </motion.div>
 
         {/* Profile Image with dark circular background */}
@@ -103,12 +116,14 @@ export default function Hero() {
           variants={fadeInUpVariants}
           custom={3}
         >
-          {/* X (Twitter) */}
-          <Link href="https://x.com/TusharSahni29" className="w-10 h-10 rounded-full flex items-center justify-center border border-white/20 hover:bg-white/10 transition-colors">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-            </svg>
-          </Link>
+            {/* LinkedIN */}
+         {/* LinkedIn */}
+<Link href="https://www.linkedin.com/in/tushar-sahni-55057a1ab/" className="w-10 h-10 rounded-full flex items-center justify-center border border-white/20 hover:bg-white/10 transition-colors">
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-white group-hover:text-[#0077B5]">
+    <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.6v2.2h.05c.5-.95 1.7-1.95 3.5-1.95 3.75 0 4.45 2.5 4.45 5.75V24h-4v-7.75c0-1.85-.03-4.25-2.6-4.25-2.6 0-3 2.05-3 4.1V24h-4V8z"/>
+  </svg>
+</Link>
+          
           {/* Github */}
           <Link href="https://github.com/tusharsahni" className="w-10 h-10 rounded-full flex items-center justify-center border border-white/20 hover:bg-white/10 transition-colors">
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -126,45 +141,13 @@ export default function Hero() {
     21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
   </svg>
 </Link>
-
-          {/* LinkedIN */}
-         {/* LinkedIn */}
-<Link href="https://www.linkedin.com/in/tushar-sahni-55057a1ab/" className="w-10 h-10 rounded-full flex items-center justify-center border border-white/20 hover:bg-white/10 transition-colors">
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-white group-hover:text-[#0077B5]">
-    <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.6v2.2h.05c.5-.95 1.7-1.95 3.5-1.95 3.75 0 4.45 2.5 4.45 5.75V24h-4v-7.75c0-1.85-.03-4.25-2.6-4.25-2.6 0-3 2.05-3 4.1V24h-4V8z"/>
-  </svg>
-</Link>
-
-        </motion.div>
-
-        {/* Contact Button with GlowButton */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUpVariants}
-          custom={4}
-          className="relative"
-        >
-          <GlowButton
-            href="#contact"
-            variant="primary"
-            size="md"
-            glowIntensity="high"
-            className="cursor-pointer hover:cursor-pointer"
-            icon={
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-80">
-                <path d="M7 17L17 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M7 7H17V17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            }
-          >
-            Contact Me
-          </GlowButton>
-
-          {/* Bottom glow that expands on hover */}
-          <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[60%] h-[40px]">
-            <div className="w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent blur-xl opacity-30"></div>
-          </div>
+{/* X (Twitter) */}
+          <Link href="https://x.com/TusharSahni29" className="w-10 h-10 rounded-full flex items-center justify-center border border-white/20 hover:bg-white/10 transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+            </svg>
+          </Link>
+        
         </motion.div>
       </div>
 
