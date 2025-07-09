@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Tushar Sahni | Portfolio",
-  description: "Portfolio of Tushar Sahni, showcasing my work as a Full-Stack Web Developer with expertise in AI and Machine Learningg.",
+  description: "Portfolio of Tushar Sahni, showcasing my work as a Full-Stack Web Developer with expertise in AI and Machine Learning.",
   icons: {
     icon: [
       {
