@@ -83,7 +83,7 @@ export default function Hero() {
 
           {/* Main profile image */}
           <Image
-            src="/profile.jpg"
+            src="/profile2.jpg"
             alt="Tushar Sahni"
             width={160}
             height={160}
