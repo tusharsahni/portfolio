@@ -64,13 +64,13 @@ export default function CustomCursor() {
   };
 
   // Only show custom cursor on desktop
-  if (typeof window !== "undefined" && window.innerWidth < 1024) {
-    return null;
-  }
+  // if (typeof window !== "undefined" && window.innerWidth < 1024) {
+  //   return null;
+  // }
 
   return (
     <motion.div
-      className="fixed top-0 left-0 rounded-full pointer-events-none z-50 hidden lg:block"
+      className="fixed top-0 left-0 rounded-full pointer-events-none z-50 "
       variants={variants}
       animate={cursorVariant}
     />
