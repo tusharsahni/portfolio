@@ -6,6 +6,7 @@ import VideoPlayer from "./VideoPlayer";
 import Link from "next/link";
 import React from "react";
 import SmokeVideoBackground from "./SmokeVideoBackground";
+import { Github, ExternalLink } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -19,6 +20,9 @@ interface Project {
   duration?: string;
   year?: number;
   featured?: boolean;
+  techStack?: string[];         
+  github?: string;             
+  liveDemo?: string; 
 }
 
 const projects: Project[] = [
@@ -28,11 +32,14 @@ const projects: Project[] = [
     category: "Full Stack",
     client: "",
     description: "A personalised finance tracker that helps you manage your finances effectively. It allows you to track your income, expenses, and investments in one place. The app provides insights into your spending habits and helps you make informed financial decisions.",
-    image: "/Designer.jpeg", // Local image
-    videoThumbnail: "/Designer.jpeg", // Local image
-    videoUrl: "/swipsesense-final.mp4", // Local video file
+    image: "/coinguard.png", // Local image
+    videoThumbnail: "/coinguard.png", // Local image
+    videoUrl: "", 
     year: 2024,
     featured: true,
+    techStack: ["HTML", "React", "Express.js", "Node.js", "PostGRE SQL", "Tailwind CSS" , "JWT"],
+    github: "https://github.com/tusharsahni/CoinGuard",
+    liveDemo: "https://coin-guard-iota.vercel.app/"
   },
   {
     id: 2,
@@ -40,11 +47,14 @@ const projects: Project[] = [
     category: "AI & ML",
     client: "",
     description: "An AI-powered gold price tracker that provides real-time updates on gold prices. It uses machine learning algorithms to predict future price trends based on historical data and market analysis.",
-    image: "/image.jpg", // Local image
-    videoThumbnail: "/swipesense.png", // Local image
-    videoUrl: "/swipsesense-final.mp4", // Local video file
+    image: "/goldtrends.png", // Local image
+    videoThumbnail: "/goldtrends.png", // Local image
+    videoUrl: "", // Local video file
     year: 2024,
     featured: false,
+    techStack: ["Python", "Flask","Scikit-Learn" ,"Pandas", "NumPy", "HTML", "TailwindCSS"],
+    github: "https://github.com/tusharsahni/gold-price-predictor",
+    liveDemo: ""
   },
   {
     id: 3,
@@ -52,11 +62,13 @@ const projects: Project[] = [
     category: "AI & ML",
     client: "",
     description: "A tool that detects dark patterns in websites and applications. It uses AI to analyze user interfaces and identify manipulative design practices that can lead to user exploitation.",
-    image: "/image.jpg", // Local image
-    videoThumbnail: "/swipesense.png", // Local image
-    videoUrl: "/swipsesense-final.mp4", // Local video file
+    image: "/darkdetect.png", // Local image
+    videoThumbnail: "/darkdetect.png", // Local image
+    videoUrl: "", // Local video file
     year: 2024,
     featured: false,
+    techStack: ["Python", "Flask", "BeautifulSoup", "Selenium", "NLP", "TailwindCSS"],
+    github: "https://github.com/DPBH2023/DARK-PATTERNS"
   },
   {
     id: 4,
@@ -64,11 +76,15 @@ const projects: Project[] = [
     category: "AI & ML",
     client: "",
     description: "A tool that simplifies the process of creating Python packages using AI. It automates the generation of package structure, documentation, and setup files, making it easier for developers to create and distribute their Python libraries.",
-    image: "/image.jpg", // Local image
-    videoThumbnail: "/swipesense.png", // Local image
-    videoUrl: "/swipsesense-final.mp4", // Local video file
+    image: "/rapidwhl.png", // Local image
+    videoThumbnail: "/rapidwhl.png", // Local image
+    videoUrl: "", // Local video file
     year: 2025,
     featured: false,
+    techStack: ["Python", "FastAPI", "Streamlit","Gemini", "TailwindCSS"]
+    ,
+    github: "",
+    liveDemo: ""
   }
 ];
 
@@ -524,7 +540,9 @@ export default function HorizontalScroll() {
                     }}
                   >
                     <div className="block group">
-                      <div className="bg-black/30 backdrop-blur-sm border border-white/10 rounded-lg overflow-hidden select-none">
+                      {/* <div className="bg-black/30 backdrop-blur-sm border border-white/10 rounded-lg overflow-hidden select-none"> */}
+                      <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg overflow-hidden shadow-lg shadow-black/20 transition duration-500">
+
                         {/* Draggable area - top part of card */}
                         <div
                           className={`relative ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
@@ -698,9 +716,45 @@ export default function HorizontalScroll() {
               <h3 className="text-base md:text-lg font-medium mb-1">
                 {filteredProjects[currentIndex].title}
               </h3>
-              <p className="text-muted text-xs md:text-sm max-w-md mx-auto">
-                {renderDescriptionWithLinks(filteredProjects[currentIndex].description)}
-              </p>
+              {/* Tech Stack */}
+<div className="flex flex-wrap justify-center gap-2 mt-2">
+  {filteredProjects[currentIndex].techStack?.map((tech, index) => (
+    <span
+      key={index}
+      className="text-xs bg-white/10 text-white px-2 py-1 rounded-full border border-white/20"
+    >
+      {tech}
+    </span>
+  ))}
+</div>
+
+
+{/* Links */}
+<div className="flex justify-center gap-4 mt-2">
+  {filteredProjects[currentIndex].github && (
+    <a
+      href={filteredProjects[currentIndex].github}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-sm text-blue-400 hover:underline"
+    >    
+      GitHub
+      <Github className="inline mr-1" size={16} />
+    </a>
+  )}
+  {filteredProjects[currentIndex].liveDemo && (
+    <a
+      href={filteredProjects[currentIndex].liveDemo}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-sm text-green-400 hover:underline"
+    >
+      Live Website
+      <ExternalLink className="inline mr-1" size={16} />
+    </a>  
+  )}
+</div>
+
             </motion.div>
           </AnimatePresence>
 
