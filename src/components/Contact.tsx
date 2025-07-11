@@ -202,14 +202,14 @@ export default function Contact() {
             <div className="space-y-6">
               <div>
                 <h4 className="text-sm font-medium uppercase tracking-wider mb-2 text-gray-300">Email</h4>
-                <a href="mailto:yeshbudhia@gmail.com" className="text-lg hover:underline text-gray-200">
+                <a href="mailto:tusharsahni1234@gmail.com" className="text-lg hover:underline text-gray-200">
                   tusharsahni1234@gmail.com
                 </a>
               </div>
 
               <div>
                 <h4 className="text-sm font-medium uppercase tracking-wider mb-2 text-gray-300">Phone</h4>
-                <a href="tel:+917879310513" className="text-lg hover:underline text-gray-200">
+                <a href="tel:+918837801609" className="text-lg hover:underline text-gray-200">
                   +91 8837801609
                 </a>
               </div>
